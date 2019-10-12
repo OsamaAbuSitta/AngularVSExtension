@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # VSIX Module for AppVeyor
-=======
-# VSIX Module for AppVeyor by Mads Kristensen
->>>>>>> b806d1845cb9e312c036199b53186ffe88943cba
 [cmdletbinding()]
 param()
 
