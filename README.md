@@ -1,17 +1,19 @@
 # Angular Html TS Switcher
 
-<!-- Replace this badge with your own-->
-[![Build status](https://ci.appveyor.com/api/projects/status/hv6uyc059rqbc6fj?svg=true)](https://ci.appveyor.com/project/madskristensen/extensibilitytools)
+[![Build status](https://ci.appveyor.com/api/projects/status/w8xgtgb9fl74swap?svg=true)](https://ci.appveyor.com/project/OsamaAbuSitta/angularvsextension)
 
-<!-- Update the VS Gallery link after you upload the VSIX-->
-Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/[GuidFromGallery])
-or get the [CI build](http://vsixgallery.com/extension/593771d0-13b5-4de6-a192-165dd6f16144/).
+Download this extension from the [Marketplace](https://visualstudiogallery.msdn.microsoft.com/[GuidFromGallery])
+or from VS Gallery to get the [RC Version](http://vsixgallery.com/extension/593771d0-13b5-4de6-a192-165dd6f16144/).
 
 ---------------------------------------
 
 Easily navigate between typescript(.ts) and template(.html) in angular project and ng serve angular project.
 
 See the [change log](CHANGELOG.md) for changes and road map.
+
+## Supported Visual Studio Versions 
+- 2017
+- 2019
 
 ## Features
 
@@ -30,6 +32,11 @@ Open the command prompt in path of active project in any context [shortcut ctrl+
 ![Open In Command Prompt](AngularVSExtension/art/open-in-command-prompt.gif)
 ## Shortcuts
 All used shortcuts used are not reserved for any visual studio functionality and you can customized it, see [Identify and customize keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio?view=vs-2019).
+
+## Build requirements
+- Visual Studio 2017 (15.7.4)+
+- Visual Studio SDK
+- The built VSIX will work with Visual Studio 2015 or newer
 
 ## Contribute
 Check out the [contribution guidelines](CONTRIBUTING.md)
