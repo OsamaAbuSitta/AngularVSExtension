@@ -1,7 +1,11 @@
 image: Visual Studio 2017
 
 install:
+<<<<<<< HEAD
 - ps: (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/OsamaAbuSitta/AngularVSExtension/master/vsix.ps1") | iex
+=======
+- ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
+>>>>>>> b806d1845cb9e312c036199b53186ffe88943cba
 
 before_build:
   - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
