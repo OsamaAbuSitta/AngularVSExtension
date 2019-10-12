@@ -7,6 +7,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <UseCodebase>true</UseCodebase>
+    <InstallRoot>Default</InstallRoot>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -78,8 +79,8 @@
     <None Include="packages.config" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
+      <LastGenOutput>source.extension.resx</LastGenOutput>
       <Generator>VsixManifestGenerator</Generator>
-      <LastGenOutput>source.extension1.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -206,7 +207,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="source.extension.resx">
-      <DependentUpon>source.extension.cs</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>source.extension.vsixmanifest</DependentUpon>
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

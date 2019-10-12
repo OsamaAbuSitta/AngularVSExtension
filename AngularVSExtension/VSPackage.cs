@@ -10,7 +10,7 @@ namespace AngularVSExtension
     [InstalledProductRegistration("#110", "#112", Vsix.Version, IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.guidTypeScriptHtmlSwitchCommandPackageString)]
-    [ProvideService(typeof(IAsyncServiceProvider), IsAsyncQueryable = true)]
+    [ProvideService(typeof(Microsoft.VisualStudio.Shell.Interop.SDTE), IsAsyncQueryable = true)]
     //[ProvideAutoLoad(VSConstants.UICONTEXT.NoSolution_string, PackageAutoLoadFlags.BackgroundLoad)]
     //[ProvideAutoLoad(VSConstants.UICONTEXT.SolutionExists_string, PackageAutoLoadFlags.BackgroundLoad)]
     //[ProvideAutoLoad("f1536ef8-92ec-443c-9ed7-fdadf150da82")]
