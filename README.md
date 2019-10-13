@@ -12,8 +12,8 @@ Easily navigate between typescript(.ts) and template(.html) in angular project a
 See the [change log](CHANGELOG.md) for changes and road map.
 
 ## Supported Visual Studio Versions 
-- 2017
-- 2019
+- 2019 supported 
+- 2017 In progress 
 
 ## Features
 
