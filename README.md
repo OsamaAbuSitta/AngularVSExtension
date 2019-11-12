@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/w8xgtgb9fl74swap?svg=true)](https://ci.appveyor.com/project/OsamaAbuSitta/angularvsextension)
 
-Download this extension from the [Marketplace](https://visualstudiogallery.msdn.microsoft.com/[GuidFromGallery])
+Download this extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=OAS.593771d0-13b5-4de6-a192-165dd6f16144)
 or from VS Gallery to get the [RC Version](http://vsixgallery.com/extension/593771d0-13b5-4de6-a192-165dd6f16144/).
 
 ---------------------------------------
