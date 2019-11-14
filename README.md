@@ -23,7 +23,7 @@ See the [change log](CHANGELOG.md) for changes and road map.
 
 ### Switch between typescript(.ts) and template(.html)
 Right clisk on typecript or html file then click on TS HTML switch [shortcut ctrl+2] 
-![Open In Command Prompt](AngularVSExtension/art/open-in-command-prompt.gif)
+![Open In Command Prompt](AngularVSExtension/art/ts-html-switch.gif)
 ### Angular ng server
 Open the command prompt with ng serve command in path of active project in any context [shortcut ctrl+3]
 ![Ng Serve](AngularVSExtension/art/ng-serve.gif)
