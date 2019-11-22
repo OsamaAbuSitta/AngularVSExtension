@@ -31,7 +31,7 @@ Open the command prompt with ng serve command in path of active project in any c
 Open the command prompt in path of active project in any context [shortcut ctrl+4]
 ![Open In Command Prompt](AngularVSExtension/art/open-in-command-prompt.gif)
 ## Shortcuts
-All used shortcuts used are not reserved for any visual studio functionality and you can customized it, see [Identify and customize keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio?view=vs-2019).
+All shortcuts used are not reserved for any visual studio functionality and you can customized it, see [Identify and customize keyboard shortcuts in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/identifying-and-customizing-keyboard-shortcuts-in-visual-studio?view=vs-2019).
 
 ## Build requirements
 - Visual Studio 2017 (15.7.4)+
