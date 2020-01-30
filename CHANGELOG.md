@@ -11,7 +11,7 @@ on the official Visual Studio extension gallery.
 
 ## 2.0
 
-- [ ] Angula Cli integration
+- [ ] Angular Cli integration
 - [ ] Setting Dialog
 
 
