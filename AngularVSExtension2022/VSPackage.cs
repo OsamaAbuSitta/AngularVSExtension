@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio;
+﻿using AngularVSExtension2022;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell;
 using System;
 using System.Runtime.InteropServices;
