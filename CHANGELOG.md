@@ -2,7 +2,7 @@
 
 Features that have a checkmark are complete and available for
 download in the
-[CI build](http://vsixgallery.com/extension/593771d0-13b5-4de6-a192-165dd6f16144/).
+[CI build](http://vsixgallery.com/extension/05D8FE2B-55EC-4A28-8865-C2570F30A1C9/).
 
 # Change log
 

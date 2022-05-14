@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <Commands package="guidTypeScriptHtmlSwitchCommandPackage">
+    <Menus>
+      <Menu guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="TopLevelMenu" priority="0x700" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+        <Strings>
+          <ButtonText>TestMenu</ButtonText>
+          <CommandName>Angular</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+      <Group guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1">
+      </Group>
+
+      <Group guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="MyMenuGroup3">
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="TypeScriptHtmlSwitchCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" />
+        <Icon guid="guidSwitchSourceOrTargetImg" id="guidSwitchSourceOrTargetImgPic" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>TS Html Switch</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="cmdidNgServeCommand" priority="0x0100" type="Button">
+        <Parent guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="MyMenuGroup3" />
+        <Icon guid="guidAngularImg" id="guidAngularImgPic" />
+        <Strings>
+          <ButtonText>Ng Serve</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet2" id="cmdidOpenInCmdCommand" priority="0x0100" type="Button">
+        <Parent guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="MyMenuGroup3" />
+        <Icon guid="guidCommandImg" id="guidCommandImgPic" />
+        <Strings>
+          <ButtonText>Open In Cmd Command</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidSwitchSourceOrTargetImg" href="Resources\SwitchSourceOrTarget.png" usedList="guidSwitchSourceOrTargetImgPic" />
+      <Bitmap guid="guidAngularImg" href="Resources\ngServe.png" usedList="guidAngularImgPic" />
+      <Bitmap guid="guidCommandImg" href="Resources\Command.png" usedList="guidCommandImgPic" />
+    </Bitmaps>
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" editor="guidVSStd97" key1="D" mod1="Control" />
+  </KeyBindings>
+
+  <CommandPlacements>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_WEBITEMNODE" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" priority="0x6000">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" priority="0x6000">
+      <Parent guid="HTMLContext" id="menu" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="MyMenuGroup1" priority="0x6000">
+      <Parent guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="TopLevelMenu" />
+    </CommandPlacement>
+
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="MyMenuGroup3" priority="0x0900">
+      <Parent guid="HTMLContext" id="menu" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="MyMenuGroup3" priority="0x0600">
+      <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+    </CommandPlacement>
+    <CommandPlacement guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="MyMenuGroup3" priority="0x6000">
+      <Parent guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="TopLevelMenu" />
+    </CommandPlacement>
+  </CommandPlacements>
+
+  <KeyBindings>
+    <KeyBinding  guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet" id="TypeScriptHtmlSwitchCommandId" editor="guidVSStd97" key1="0x32" mod1="CONTROL"  />
+    <KeyBinding  guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet1" id="cmdidNgServeCommand" editor="guidVSStd97" key1="0x33" mod1="CONTROL"  />
+    <KeyBinding  guid="guidTypeScriptHtmlSwitchCommandPackageCmdSet2" id="cmdidOpenInCmdCommand" editor="guidVSStd97" key1="0x34" mod1="CONTROL"  />
+  </KeyBindings>
+
+  <Symbols>
+
+    <GuidSymbol name="guidTypeScriptHtmlSwitchCommandPackage" value="{14261379-f70d-4d2a-b69f-653605fb158f}" />
+
+    <GuidSymbol name="guidTypeScriptHtmlSwitchCommandPackageCmdSet" value="{fde67d78-b48b-4d07-9643-af7a2e1cab14}">
+      <IDSymbol name="MyMenuGroup1" value="0x1020" />
+      <IDSymbol name="TypeScriptHtmlSwitchCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="HTMLContext" value="{78F03954-2FB8-4087-8CE7-59D71710B3BB}">
+      <IDSymbol name="menu" value="0x0001" />
+    </GuidSymbol>
+
+    <GuidSymbol value="{61323670-1806-43d2-8482-b0a3ed4d1c8b}" name="guidTypeScriptHtmlSwitchCommandPackageCmdSet2">
+      <IDSymbol value="4128" name="MyMenuGroup2" />
+      <IDSymbol value="256" name="cmdidOpenInCmdCommand" />
+    </GuidSymbol>
+    <GuidSymbol value="{953f9758-2fbb-4e2c-abad-e8bac60fed4b}" name="guidTypeScriptHtmlSwitchCommandPackageCmdSet1">
+      <IDSymbol value="256" name="cmdidNgServeCommand" />
+      <IDSymbol value="4128" name="MyMenuGroup3" />
+      <IDSymbol name="TopLevelMenu" value="0x1021" />
+    </GuidSymbol>
+
+    <!--Images-->
+    <GuidSymbol name="guidSwitchSourceOrTargetImg" value="{476e20e3-e034-4e61-93eb-6de3d19ce043}">
+      <IDSymbol name="guidSwitchSourceOrTargetImgPic" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidAngularImg" value="{476e20e3-e034-4e11-93eb-6de3d19ce143}">
+      <IDSymbol name="guidAngularImgPic" value="1" />
+    </GuidSymbol>
+
+    <GuidSymbol value="{2fe884c3-861b-4317-9246-25d351d8c93d}" name="guidCommandImg">
+      <IDSymbol name="guidCommandImgPic" value="1" />
+    </GuidSymbol>
+    <!--End Images-->
+  </Symbols>
+</CommandTable>
