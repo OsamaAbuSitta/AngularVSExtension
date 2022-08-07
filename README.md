@@ -1,8 +1,9 @@
 # Angular Html TS Switcher
 
-[![Build status](https://ci.appveyor.com/api/projects/status/w8xgtgb9fl74swap?svg=true)](https://ci.appveyor.com/project/OsamaAbuSitta/angularvsextension)
+[comment]: <[![Build status](https://ci.appveyor.com/api/projects/status/w8xgtgb9fl74swap?svg=true)](https://ci.appveyor.com/project/OsamaAbuSitta/angularvsextension)>
 
-Download this extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=OAS.05D8FE2B-55EC-4A28-8865-C2570F30A1C9)
+
+Download this extension from the Marketplace [VS2022](https://marketplace.visualstudio.com/items?itemName=OAS.05D8FE2B-55EC-4A28-8865-C2570F30A1C9) or [VS2019](https://marketplace.visualstudio.com/items?itemName=OAS.593771d0-13b5-4de6-a192-165dd6f16144)
 or from VS Gallery to get the [RC Version](http://vsixgallery.com/extension/05D8FE2B-55EC-4A28-8865-C2570F30A1C9/).
 
 ---------------------------------------
