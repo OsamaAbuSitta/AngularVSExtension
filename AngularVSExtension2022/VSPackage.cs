@@ -33,8 +33,9 @@ namespace AngularVSExtension
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Some error in Angular Html TS Switcher extensiton.\n Please take screenshot and create issue on github with this error\n{ex}", "[Angular Html TS Switcher] Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                 ActivityLog.LogError($"[Angular Html TS Switcher]{nameof(VSPackage)}", ex.ToString());
+                //MessageBox.Show($"Some error in Angular Html TS Switcher extensiton.\n Please take screenshot and create issue on github with this error\n{ex}", "[Angular Html TS Switcher] Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw;
             }
         }
     }
