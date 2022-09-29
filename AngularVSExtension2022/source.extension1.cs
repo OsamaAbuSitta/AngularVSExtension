@@ -11,7 +11,7 @@ namespace AngularVSExtension2022
         public const string Name = "Angular Html TS Switcher";
         public const string Description = @"Easily navigate between typescript(.ts) and template(.html) in angular project and ng serve angular project.";
         public const string Language = "en-US";
-        public const string Version = "2.0";
+        public const string Version = "2.1";
         public const string Author = "Osama Abu-Sitta";
         public const string Tags = "angular, typescript, web, html, ts";
     }

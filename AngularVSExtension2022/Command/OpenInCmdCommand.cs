@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
+using System.Windows.Forms;
 using Task = System.Threading.Tasks.Task;
 
 namespace AngularVSExtension
@@ -84,15 +85,23 @@ namespace AngularVSExtension
         /// <param name="e">Event args.</param>
         private void Execute(object sender, EventArgs e)
         {
-            var fullPath = ExtensionHelper.GetActiveProjectDirectoryPath(ServiceProvider);
-            string strCmdText = "/K";
-            if (!string.IsNullOrEmpty(fullPath))
+            try
             {
-                var driverName = fullPath.Substring(0, 1);
-                strCmdText = $"/K {driverName}: & cd {fullPath}";
-            }
+                var fullPath = ExtensionHelper.GetActiveProjectDirectoryPath(ServiceProvider);
+                string strCmdText = "/K";
+                if (!string.IsNullOrEmpty(fullPath))
+                {
+                    var driverName = fullPath.Substring(0, 1);
+                    strCmdText = $"/K {driverName}: & cd {fullPath}";
+                }
 
-            System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+                System.Diagnostics.Process.Start("CMD.exe", strCmdText);
+            }
+            catch (Exception ex)
+            {
+                ActivityLog.LogError($"[Angular Html TS Switcher]{nameof(OpenInCmdCommand)}", ex.ToString());
+                MessageBox.Show($"Some error in Angular Html TS Switcher extensiton.\n Please take screenshot and create issue on github with this error\n{ex}", $"[Angular Html TS Switcher]:{nameof(OpenInCmdCommand)} Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.Shell;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Windows.Forms;
 using Task = System.Threading.Tasks.Task;
 
 namespace AngularVSExtension
@@ -23,10 +24,18 @@ namespace AngularVSExtension
 
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
-            await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            await TypeScriptHtmlSwitchCommand.InitializeAsync(this);
-            await NgServeCommand.InitializeAsync(this);
-            await OpenInCmdCommand.InitializeAsync(this);
+            try
+            {
+                await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+                await TypeScriptHtmlSwitchCommand.InitializeAsync(this);
+                await NgServeCommand.InitializeAsync(this);
+                await OpenInCmdCommand.InitializeAsync(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Some error in Angular Html TS Switcher extensiton.\n Please take screenshot and create issue on github with this error\n{ex}", "[Angular Html TS Switcher] Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
     }
 }

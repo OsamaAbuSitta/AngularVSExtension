@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.Shell;
 using System;
 using System.ComponentModel.Design;
 using System.IO;
+using System.Windows.Forms;
 using Task = System.Threading.Tasks.Task;
 
 namespace AngularVSExtension
@@ -85,14 +86,21 @@ namespace AngularVSExtension
 
         private static void WindowEvents_WindowActivated(EnvDTE.Window gotFocus, EnvDTE.Window lostFocus)
         {
-            if (gotFocus.Kind == "Document")
+            try
             {
-                Document textDoc = gotFocus.Document as Document;
-                ActiveDocumentFullPath = textDoc.FullName;
+                if (gotFocus.Kind == "Document")
+                {
+                    Document textDoc = gotFocus.Document as Document;
+                    ActiveDocumentFullPath = textDoc.FullName;
+                }
+                else
+                {
+                    ActiveDocumentFullPath = string.Empty;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                ActiveDocumentFullPath = string.Empty;
+                ActivityLog.LogError($"[Angular Html TS Switcher]{nameof(TypeScriptHtmlSwitchCommand)}", ex.ToString());
             }
         }
 
@@ -105,22 +113,38 @@ namespace AngularVSExtension
         /// <param name="e">Event args.</param>
         private async void Execute(object sender, EventArgs e)
         {
-            var selectedFile = string.IsNullOrEmpty(ActiveDocumentFullPath) ? ExtensionHelper.GetSelectedFile(ServiceProvider) : ActiveDocumentFullPath;
-            var redirecExtension = Path.GetExtension(selectedFile);
-            var redirecExtensionPath = Path.GetDirectoryName(selectedFile) + "\\" + Path.GetFileNameWithoutExtension(selectedFile) +
-                (Path.GetExtension(selectedFile).ToLower() == ".ts" ? ".html" : ".ts");
+            try
+            {
 
-            if (File.Exists(redirecExtensionPath))
-                VsShellUtilities.OpenDocument(this.package, redirecExtensionPath);
+                var selectedFile = string.IsNullOrEmpty(ActiveDocumentFullPath) ? ExtensionHelper.GetSelectedFile(ServiceProvider) : ActiveDocumentFullPath;
+                var redirecExtension = Path.GetExtension(selectedFile);
+                var redirecExtensionPath = Path.GetDirectoryName(selectedFile) + "\\" + Path.GetFileNameWithoutExtension(selectedFile) +
+                    (Path.GetExtension(selectedFile).ToLower() == ".ts" ? ".html" : ".ts");
+
+                if (File.Exists(redirecExtensionPath))
+                    VsShellUtilities.OpenDocument(this.package, redirecExtensionPath);
+            }
+            catch (Exception ex)
+            {
+                ActivityLog.LogError($"[Angular Html TS Switcher]{nameof(TypeScriptHtmlSwitchCommand)}", ex.ToString());
+                MessageBox.Show($"Some error in Angular Html TS Switcher extensiton.\n Please take screenshot and create issue on github with this error\n{ex}", $"[Angular Html TS Switcher]:{nameof(TypeScriptHtmlSwitchCommand)} Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private async void MenuItem_BeforeQueryStatus(object sender, EventArgs e)
         {
-            var selectedFile = string.IsNullOrEmpty(ActiveDocumentFullPath) ? ExtensionHelper.GetSelectedFile(ServiceProvider) : ActiveDocumentFullPath;
-
-            var command = sender as OleMenuCommand;
-            command.Visible = command.Enabled = string.IsNullOrEmpty(selectedFile) == false &&
-                   selectedFile.EndsWith(".ts") || selectedFile.EndsWith(".html");
+            try
+            {
+                var command = sender as OleMenuCommand;
+                command.Visible = false;
+                var selectedFile = string.IsNullOrEmpty(ActiveDocumentFullPath) ? ExtensionHelper.GetSelectedFile(ServiceProvider) : ActiveDocumentFullPath;
+                command.Visible = command.Enabled = string.IsNullOrEmpty(selectedFile) == false &&
+                       selectedFile.EndsWith(".ts") || selectedFile.EndsWith(".html");
+            }
+            catch (Exception ex)
+            {
+                ActivityLog.LogError($"[Angular Html TS Switcher]{nameof(TypeScriptHtmlSwitchCommand)}", ex.ToString());
+            }
         }
     }
 }
